@@ -19,7 +19,14 @@ const DEFAULT_END_DATE = dayjs().format('YYYY-MM-DD'); // 今天
 
 const DEFAULT_SIZE = 50; // 每页数量，最大50
 
-getCateringWithdrawInfo();
+// 主函数
+async function main() {
+  var withdrawRecords = await getCateringWithdrawInfo();
+  console.log('withdrawRecords.length', withdrawRecords.length);
+}
+
+// 执行主函数
+main().catch(console.error);
 
 async function getCateringWithdrawInfo() {
   try {
@@ -34,7 +41,7 @@ async function getCateringWithdrawInfo() {
       'access-token': access_token,
     });
     console.log(JSON.stringify(res.data.bill_withdraw_records, null, 2));
-    return res;
+    return res.data.bill_withdraw_records;
   } catch (error) {
     console.error('获取餐饮提现信息失败:', error);
   }
