@@ -1,7 +1,8 @@
-
-const baseUrl =
+const withdrawUrl =
   'https://open.douyin.com/goodlife/v1/settle/withdraw/catering_query/';
 
-getCateringWithdrawInfo(null);
+function getCateringWithdrawInfo(params) {
 
-function getCateringWithdrawInfo(params) {}
+}
+
+function getOrderByWithdrawId(withdrawId) {}
