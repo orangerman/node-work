@@ -1,0 +1,55 @@
+# Node.js dependencies
+/node_modules/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.vscode/*
+
+# MacOS specific
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# build output
+/dist/
+build/
+coverage/
+
+# TypeScript output
+/dist-ts/
+*.tsbuildinfo
+
+# Temporary files
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Jest configuration (optional, if using Jest)
+jest/
+
+# VS Code extensions & settings
+.vscode/
