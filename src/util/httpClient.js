@@ -17,4 +17,21 @@ async function postWithHeaders(url, data, headers = {}) {
   }
 }
 
-module.exports = { postWithHeaders };
+async function getWithHeaders(url, params = {}, headers = {}) {
+  try {
+    const response = await axios.get(url, {
+      params: params, // axios 会自动将对象转换为 query 参数
+      headers: {
+        ...headers, // 可以传额外的 header 进来
+      },
+    });
+
+    // axios 默认会把 JSON 响应转成对象
+    return response.data;
+  } catch (error) {
+    console.error('请求出错:', error.message);
+    throw error;
+  }
+}
+
+module.exports = { postWithHeaders, getWithHeaders };
