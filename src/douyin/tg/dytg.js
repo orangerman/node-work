@@ -1,5 +1,5 @@
-const { postWithHeaders, getWithHeaders } = require('../../util/httpClient');
 const dayjs = require('dayjs');
+const { getWithHeaders } = require('../../util/httpClient');
 
 const withdrawUrl =
   'https://open.douyin.com/goodlife/v1/settle/withdraw/catering_query/';
