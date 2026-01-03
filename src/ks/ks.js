@@ -15,7 +15,8 @@ async function main() {
   var res = await queryOrder();
 }
 
-main().catch(console.error);
+main()
+  .catch(console.error);
 
 async function queryOrder() {
   try {
@@ -28,7 +29,7 @@ async function queryOrder() {
     const res = await getWithHeaders(queryOrderUrl, params, {
       'access-token': access_token,
     });
-    console.log(res);
+    // console.log(res);
     console.log(JSON.stringify(res.data, null, 2));
     return res.data.records;
   } catch (error) {
