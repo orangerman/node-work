@@ -13,7 +13,7 @@ const API_URLS = {
 };
 
 // 配置
-const ACCESS_TOKEN = 'clt.7337a7fc6b5d5e1169a518e753e48556pYSXYF8qvk3z0h1SFyemwSR46es2_hl';
+const ACCESS_TOKEN = '111';
 const PAGE_SIZE = 50;
 
 // 获取所有账户的提现记录
@@ -117,7 +117,13 @@ function convertToCSV(orders) {
       if (value === null || value === undefined) {
         return '';
       }
-      const stringValue = String(value);
+      // 如果是对象或数组，转换为JSON字符串
+      let stringValue;
+      if (typeof value === 'object') {
+        stringValue = JSON.stringify(value);
+      } else {
+        stringValue = String(value);
+      }
       if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
         return `"${stringValue.replace(/"/g, '""')}"`;
       }
@@ -166,10 +172,10 @@ async function processWithdraw(withdraw, billDate) {
 async function main() {
   try {
     // 配置参数（可根据需要修改）
-    const accountIdList = ['7418855095859077419']; // 账户ID列表
-    const startDate = '2024-12-01'; // 开始日期
-    const endDate = '2024-12-31'; // 结束日期
-    const billDate = '2024-12-01'; // 账单日期
+    const accountIdList = ['7005130682615728135']; // 账户ID列表
+    const startDate = '2026-01-01'; // 开始日期
+    const endDate = '2026-01-01'; // 结束日期
+    const billDate = '2026-01-01'; // 账单日期
 
     console.log('开始查询提现记录...');
     console.log(`账户列表: ${accountIdList.join(', ')}`);
